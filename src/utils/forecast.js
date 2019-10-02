@@ -12,7 +12,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to get weather with provided location', undefined)
         } else {
-            const summary = body.hourly.summary
+            const summary = body.daily.data[0].summary
             const temp = body.currently.temperature
             const percPrecip = body.currently.precipProbability
             const tempHigh = body.daily.data[0].temperatureHigh
